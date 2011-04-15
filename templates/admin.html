@@ -9,6 +9,7 @@
             <li><a href="{{ url_for('admin', approved=0) }}">Moderation Queue</a></li>
             <li><a href="{{ url_for('admin', approved=1) }}">Approved Tweets</a></li>
             <li><a href="{{ url_for('admin', approved=2) }}">Rejected Tweets</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
         </ul>
         <form action="" method="post">
             <div id="tweets">
