@@ -1,0 +1,3 @@
+syntax: glob
+config.py
+*.sqlite3
