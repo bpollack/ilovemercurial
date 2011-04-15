@@ -93,11 +93,13 @@ def admin():
 def heartbeat():
     ts = q("select value from settings where key = 'last_poll'", one=True)
     ts = float(ts['value']) if ts else None
+    updated = False
     if request.args.get('override') or not ts or time.time() - ts > app.config['POLL_INTERVAL']:
         update_tweets()
         ts = time.time()
         c("insert or replace into settings values ('last_poll', ?)", [ts])
-    return str(datetime.fromtimestamp(ts))
+        updated = True
+    return 'Last updated at %s%s' % (str(datetime.fromtimestamp(ts)), ' (just now)' if updated else '')
 
 ## AWESOME
 
