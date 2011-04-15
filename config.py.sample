@@ -1,2 +1,5 @@
 DEBUG = True
 DATABASE = 'tweets.sqlite3'
+POLL_INTERVAL = 180
+MAGIC = 'changeme'
+SECRET_KEY = 'changemetoo'

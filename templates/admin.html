@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Administration</title>
+    </head>
+    <body>
+        <h1>Administration</h1>
+        <ul>
+            <li><a href="{{ url_for('admin', approved=0) }}">Moderation Queue</a></li>
+            <li><a href="{{ url_for('admin', approved=1) }}">Approved Tweets</a></li>
+            <li><a href="{{ url_for('admin', approved=2) }}">Rejected Tweets</a></li>
+        </ul>
+        <form action="" method="post">
+            <div id="tweets">
+                <ul>
+                    {% for tweet in tweets %}
+                    <li>
+                    <a href="http://twitter.com/{{ tweet.user }}/"><img src="{{ tweet.image }}" alt="{{ tweet.user }} avatar "/>{{ tweet.user }}</a> says "{{ tweet.text }}"
+                    <a href="http://twitter.com/{{ tweet.user }}/status/{{ tweet.id }}">&infin;</a><br />
+                    <select name="tweet-{{ tweet.id }}">
+                        <option {{ 'selected' if tweet.approved == 0 }} value="0">Not Moderated</option>
+                        <option {{ 'selected' if tweet.approved == 1 }} value="1">Approved</option>
+                        <option {{ 'selected' if tweet.approved == 2 }} value="2">Rejected</option>
+                    </select>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <input type="submit" />
+            </div>
+        </form>
+    </body>
+</html>
+
