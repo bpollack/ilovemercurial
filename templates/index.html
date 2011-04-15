@@ -16,7 +16,8 @@
             <ul>
                 {% for tweet in tweets %}
                 <li>
-                    <img src="{{ tweet.image }}" alt="{{ tweet.user }} avatar "/>{{ tweet.user }} says "{{ tweet.text }}"
+                <a href="http://twitter.com/{{ tweet.user }}/"><img src="{{ tweet.image }}" alt="{{ tweet.user }} avatar "/>{{ tweet.user }}</a> says "{{ tweet.text }}"
+                <a href="http://twitter.com/{{ tweet.user }}/status/{{ tweet.id }}">&infin;</a>
                 </li>
                 {% endfor %}
             </ul>
