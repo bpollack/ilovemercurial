@@ -1,0 +1,46 @@
+.wrapper {
+  padding: 10px 0;
+  width: 100%;
+} 
+h1 {
+  font-size: 28px;
+  line-height: 32px;
+  margin: 0 0 20px 0;
+  min-width: 0;
+  width: 66%;
+}
+h2 {
+  margin-left: 2.5%;
+}
+#links {
+  clear: both;
+  float: none;
+  width: 95%;
+}
+#links hr {
+  display: block;
+}
+#links ul {
+  margin-bottom: 40px;
+  min-width: 0;
+} 
+#links h2 {
+  margin: 20px 0;
+  min-width: 0;
+}
+#links li a {
+  padding: 10px;
+}
+#tweets {
+  float: none;
+  margin: 0 auto;
+  width: 95%;
+}
+#tweets .meta {
+  width: 25%;
+}
+#tweets .tweet-text {
+  margin: 0;
+  min-width: 0;
+  width: 66%;
+}
