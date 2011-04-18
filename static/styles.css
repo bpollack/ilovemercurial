@@ -224,9 +224,13 @@ h1 span {
   
   #tweets .tweet-text .permalink {
     bottom: 0;
+    color: #aaa;
     margin: 0;
     position: absolute;
     right: 5px;
+  }
+  #tweets .tweet-text .permalink:hover {
+    color: #333;
   }
 
   #tweets .tweet-text .hashtag {
