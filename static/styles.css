@@ -286,7 +286,129 @@ h1 span {
     text-shadow: 0 1px #fff;
     top: 54px;
   }
+  
+  form #tweets .tweet-text {
+    min-height: 0;
+    padding-bottom: 35px;
+  }
+  
+  form #tweets .tweet-text select {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+  }
+  
+  /* forms */
 
+  form .form-content { 
+    margin-bottom: 20px; 
+    padding-bottom: 0; 
+  }
+  form .form-content .widget { 
+    margin-bottom: 20px; 
+  }
+  textarea, input[type="text"], input[type="submit"], input[type="password"] { 
+    padding: 5px; 
+    background: #fff url(/images/gradient-input.png) top left repeat-x; 
+    border: 1px solid #b3b3b3; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+  }
+  textarea:focus, 
+  input[type="text"]:focus,
+  input[type="password"]:focus { 
+    background: #fff;
+    border-color: #666;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  }
+  input[type="text"], input[type="password"] { 
+    width: 400px; 
+    height: 20px; 
+    margin-bottom: 5px; 
+  }
+  input[type="password"] {
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  select { 
+    max-height: 300px; 
+    width: 250px; 
+    margin-bottom: 10px; 
+  }
+  textarea { 
+    width: 613px; 
+    height: 200px; 
+  }
+  input[type="submit"], input[type="button"], button { 
+    background: #ddd;
+    border-bottom: 1px solid #aaa;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    font-family: myriad-pro-condensed-1, myriad-pro-condensed-2, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif; 
+    font-weight: 700; 
+    line-height: 20px;
+    margin: 0 5px 20px 0; 
+    padding: 9px 15px; 
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+  input[type="submit"]:hover, input[type="button"]:hover, button:hover { 
+    background-color: #ccc; 
+  }
+  input[type="submit"]:active, input[type="button"]:active, button:active { 
+    background-color: #aaa; 
+    border: 1px solid #999;
+    border-top: 1px solid #888;
+    box-shadow: 0 1px 0 #fff, 0 1px 0 #aaa inset;
+    -moz-box-shadow: 0 1px 0 #fff, 0 1px 0 #aaa inset;
+    -webkit-box-shadow: 0 1px 0 #fff, 0 1px 0 #aaa inset;
+    color: #000;
+    text-decoration: none;
+    text-shadow: none;
+    -moz-text-shadow: none;
+    -webkit-text-shadow: none;
+  }
+  input.cancel, button.cancel { 
+    background-color: #dcc;
+    border: 1px solid #caa;
+    border-bottom: 1px solid #b99;
+  }
+  input.cancel:hover, button.cancel:hover { 
+    background-color: #ebb;
+  }
+  input.cancel:active, button.cancel:active { 
+    background-color: #caa; 
+    border: 1px solid #a88;
+    border-top: 1px solid #977;
+  }
+  fieldset { 
+    border: 1px solid #b3b3b3; 
+    padding: 15px; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    margin-bottom: 15px; 
+  }
+  input[type="hidden"] { 
+    display: none; 
+  }
+  input[type="checkbox"], input[type="radio"] { 
+    display: inline; 
+  }
+  form .text label, form .password label, form .select label, form .textarea label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-family: myriad-pro-condensed-1, myriad-pro-condensed-2, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif; 
+    font-weight: bold; 
+  }
+
+  input.submit {
+    display: block;
+    clear: both;
+    float: right;
+  }
 
 /* utils / etc. */
 

@@ -2,33 +2,51 @@
 <html>
     <head>
         <title>Administration</title>
+        <link type="text/css" href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+        <link rel='stylesheet' media='screen and (max-width: 775px)' href='{{ url_for('static', filename='mobile.css') }}' />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='ilovemercurial.js') }}"></script>
     </head>
     <body>
-        <h1>Administration</h1>
-        <ul>
-            <li><a href="{{ url_for('admin', approved=0) }}">Moderation Queue</a></li>
-            <li><a href="{{ url_for('admin', approved=1) }}">Approved Tweets</a></li>
-            <li><a href="{{ url_for('admin', approved=2) }}">Rejected Tweets</a></li>
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
-        </ul>
+      <div class="wrapper">
+        <div id="links">
+          <h2>Links</h2>
+          <ul>
+              <li><a href="{{ url_for('admin', approved=0) }}">Moderation Queue</a></li>
+              <li><a href="{{ url_for('admin', approved=1) }}">Approved Tweets</a></li>
+              <li><a href="{{ url_for('admin', approved=2) }}">Rejected Tweets</a></li>
+              <li><a href="{{ url_for('logout') }}">Logout</a></li>
+          </ul>
+        </div>
         <form action="" method="post">
             <div id="tweets">
+              <h1>Administration</h1>
                 <ul>
                     {% for tweet in tweets %}
                     <li>
-                    <a href="http://twitter.com/{{ tweet.user }}/"><img src="{{ tweet.image }}" alt="{{ tweet.user }} avatar "/>{{ tweet.user }}</a> says "{{ tweet.text }}"
-                    <a href="http://twitter.com/{{ tweet.user }}/status/{{ tweet.id }}">&infin;</a><br />
-                    <select name="tweet-{{ tweet.id }}">
-                        <option {{ 'selected' if tweet.approved == 0 }} value="0">Not Moderated</option>
-                        <option {{ 'selected' if tweet.approved == 1 }} value="1">Approved</option>
-                        <option {{ 'selected' if tweet.approved == 2 }} value="2">Rejected</option>
-                    </select>
+                      <p class="meta">
+                        <a class="avatar" title="{{ tweet.user }}'s Twitter profile" href="http://twitter.com/{{ tweet.user }}/"><img src="{{ tweet.image }}" alt="{{ tweet.user }} avatar "/></a>
+                        <a class="tweeter" title="{{ tweet.user }}'s Twitter profile" href="http://twitter.com/{{ tweet.user }}/">{{ tweet.user }}</a> 
+                      </p>
+                      <p class="tweet-text">
+                        <span class="speech-thingy"></span>
+                        {{ tweet.text }}
+                        <a class="permalink" title="View this tweet on Twitter" href="http://twitter.com/{{ tweet.user }}/status/{{ tweet.id }}">&infin;</a>
+                        
+                        <select name="tweet-{{ tweet.id }}">
+                            <option {{ 'selected' if tweet.approved == 0 }} value="0">Not Moderated</option>
+                            <option {{ 'selected' if tweet.approved == 1 }} value="1">Approved</option>
+                            <option {{ 'selected' if tweet.approved == 2 }} value="2">Rejected</option>
+                        </select>
+                        
+                      </p>
                     </li>
                     {% endfor %}
                 </ul>
-                <input type="submit" />
+                <input type="submit" class="submit" value="Save" />
             </div>
         </form>
+      </div>
     </body>
 </html>
 
